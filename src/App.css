@@ -1,0 +1,183 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ff914d;
+  padding: 10px;
+  width: 100%;
+  height: 10%;
+}
+
+.logoDiv {
+  max-width: 100%;
+  height: auto;
+}
+
+.logoHeader {
+  height: 100px;
+}
+.logoFooter {
+  height: 60px;
+}
+
+.searchInput {
+  height: 50px;
+}
+
+.search-box {
+  flex-grow: 1;
+  margin: 0 10px;
+}
+
+.search-box input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.search-box button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-button button {
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .search-box {
+    flex-basis: 100%;
+    margin: 10px 0;
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff914d;
+  color: #fff;
+  padding: 20px;
+  width: 100%;
+  height: 10%;
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.copy p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.links li {
+  margin: 0 10px;
+}
+
+.links a {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.div-75 {
+  display: flex;
+  flex-basis: 75%;
+  background-color: #ccc;
+  height: 350px;
+  overflow: auto;
+}
+
+.div-25 {
+  flex-basis: 25%;
+  background-color: #999;
+  height: 350px;
+  overflow: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .div-75 {
+    flex-basis: 100%;
+  }
+  
+  .div-25 {
+    flex-basis: 100%;
+    margin-top: 20px;
+  }
+}
+
+#root {
+  border: 2px solid #000;
+  border-radius: 10px;
+
+  background-color: #f2f2f2;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  margin: 0 auto;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+  border-radius: 8px;
+  width: 100%;
+  max-width: 200px;
+  height: 180px;
+
+}
+
+.card-title {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.card-description {
+  font-size: 14px;
+
+}
+
