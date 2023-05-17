@@ -146,38 +146,67 @@ body {
   }
 }
 
-#root {
+.root {
   border: 2px solid #000;
   border-radius: 10px;
-
   background-color: #f2f2f2;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   width: 200px;
   margin: 0 auto;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
 }
 
-.card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 
 .card-image {
   border-radius: 8px;
   width: 100%;
   max-width: 200px;
-  height: 180px;
+  height: 230px;
 
 }
 
 .card-title {
   font-size: 18px;
-  margin-bottom: 8px;
+  margin: 8px 0px 5px 15px;
 }
 
-.card-description {
-  font-size: 14px;
-
+.card-button {
+  margin: 5px 5px 5px 15px;
+  display: inline-block;
+  padding: 10px 10px;
+  background-color: #3498db;
+  color: #ffffff;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
+.card-button:hover {
+  background-color: #2980b9;
+}
+
+
+.arrow-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ccc;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
+
+.arrow-button:hover {
+  background-color: #999;
+}
+
+.arrow-button i {
+  
+  font-size: 25px;
+}
