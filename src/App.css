@@ -210,3 +210,21 @@ body {
   
   font-size: 25px;
 }
+
+.sinopsi{
+  background-color: #e4e595;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  font-weight: lighter;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.calificar{
+  background-color: #a78ec9;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  font-weight: lighter;
+  font-size: 14px;
+  padding: 10px;
+}
