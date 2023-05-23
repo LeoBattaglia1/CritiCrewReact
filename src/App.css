@@ -20,6 +20,56 @@ header {
   height: 60px;
 }
 
+
+/* Estilo para ocultar los botones desplegados inicialmente */
+.login-content {
+  display: none;
+  position: absolute;
+  background-color:  #773106;
+  min-width: 150px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 10px;
+}
+
+/* Estilo para mostrar los botones desplegados al pasar el cursor */
+.login:hover .login-content {
+  display: block;
+}
+
+/* Estilos para el primer botón */
+.login .dropbtn {
+  padding: 10px;
+  background-color:  #ff914d;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.login .dropbtn:hover {
+  background-color: #ddd;
+}
+
+/* Estilos para los botones dentro del desplegable */
+.login-content button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color:  #773106;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+
+}
+
+.login-content button:hover {
+  background-color: #ddd;
+}
+
 .searchInput {
   height: 50px;
 }
@@ -228,3 +278,5 @@ body {
   font-size: 14px;
   padding: 10px;
 }
+
+
