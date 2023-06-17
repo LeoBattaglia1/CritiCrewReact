@@ -2,17 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
+ReactDOM.render(
 
-let ButtonSiguiente = document.getElementById("siguiente");
+    <App />,
 
-ReactDOM.render(<App />, document.getElementById('root1'));
-ReactDOM.render(<App />, document.getElementById('root2'));
-ReactDOM.render(<App />, document.getElementById('root3'));
-ReactDOM.render(<App />, document.getElementById('root4'));
-
-ButtonSiguiente.addEventListener('click', () => {
-    window.location.reload();
-  });
-
+  document.getElementById('root')
+);
 
 

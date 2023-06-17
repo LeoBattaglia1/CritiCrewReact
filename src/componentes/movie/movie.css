@@ -1,0 +1,12 @@
+ .movie {
+    font-size: 12px;
+    
+  }
+
+  .movie img {
+    border-radius: 10px;
+    width: 230px;
+    height: 280px;
+  }
+
+

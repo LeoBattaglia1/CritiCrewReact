@@ -1,0 +1,33 @@
+.carousel {
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+}
+
+.carousel-content {
+  width: 230px;
+  height: 350px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: chocolate;
+  text-align: center;
+}
+
+
+
+.boton {
+  width: 50px;
+  height: 350px;
+  padding: 10px 20px;
+  background-color: #ff914d;
+  border: 2px solid #000;
+  border-radius: 5px;
+}
+
+.boton:hover {
+  background-color: #444444;
+  cursor: pointer;
+}
