@@ -7,6 +7,7 @@ import './carousel.css';
 const Carousel = () => {
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
+  const [showDetails, setShowDetails] = useState(false);
 
   const fetchMovies = async () => {
     try {
@@ -27,30 +28,44 @@ const Carousel = () => {
     fetchMovies();
   }, []);
 
-  const handleMovieClick = (movie) => {
+  const handleDetailsVisibility = (movie) => {
     setSelectedMovie(movie);
+    setShowDetails(true);
+  };
+
+  const handleBackClick = () => {
+    setSelectedMovie(null);
+    setShowDetails(false);
   };
 
   return (
     <div className="carousel">
-      {selectedMovie ? (
-        <DetailsMovie movie={selectedMovie} />
+      {showDetails ? (
+        <DetailsMovie movie={selectedMovie} handleBackClick={handleBackClick} />
       ) : (
-        movies.map((movie) => (
-          <div className="carousel-content" key={movie.id}>
-            <Movie movie={movie} handleMovieClick={handleMovieClick} />
+        <>
+          <div className="carousel-content">
+            <Movie movie={movies[0]} handleDetailsVisibility={handleDetailsVisibility} />
           </div>
-        ))
-      )}
-      <button className="boton" onClick={fetchMovies}>
+          <div className="carousel-content">
+            <Movie movie={movies[1]} handleDetailsVisibility={handleDetailsVisibility} />
+          </div>
+          <div className="carousel-content">
+            <Movie movie={movies[2]} handleDetailsVisibility={handleDetailsVisibility} />
+          </div>
+          <div className="carousel-content">
+            <Movie movie={movies[3]} handleDetailsVisibility={handleDetailsVisibility} />
+          </div>
+          <button className="boton" onClick={fetchMovies}>
         &gt;
       </button>
+        </>
+      )}
+     
     </div>
   );
 };
 
 export default Carousel;
-
-
 
 

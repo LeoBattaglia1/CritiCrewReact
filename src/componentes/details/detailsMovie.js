@@ -1,17 +1,8 @@
-import React, { useState } from 'react';
+import React, { } from 'react';
 import './detailsMovie.css';
 
-const DetailsMovie = ({ movie }) => {
+const DetailsMovie = ({ movie, handleBackClick }) => {
   const { title, release_date, genres, overview } = movie;
-  const [showDetails, setShowDetails] = useState(true);
-
-  const handleBackClick = () => {
-    setShowDetails(false);
-  };
-
-  if (!showDetails) {
-    return null; // Oculta el componente DetailsMovie si showDetails es false
-  }
 
   return (
     <div className='detalle'>
@@ -79,7 +70,7 @@ const DetailsMovie = ({ movie }) => {
           </div>
         </div>
         <div className="button-container">
-          <button className="vote-button" >Votar</button>
+          <button className="vote-button"  >Votar</button>
           <button className="back-button" onClick={handleBackClick}>Volver</button>
         </div>
       </div>

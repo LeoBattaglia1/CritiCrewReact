@@ -1,5 +1,7 @@
 .content-wrapper {
   display: flex;
+  background-color: #ccc;
+ 
 }
 
 .carousel {
