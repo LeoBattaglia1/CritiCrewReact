@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Movie from '../movie/movie';
+import DetailsMovie from '../details/detailsMovie';
 import './carousel.css';
 
 const Carousel = () => {
   const [movies, setMovies] = useState([]);
+  const [selectedMovie, setSelectedMovie] = useState(null);
 
   const fetchMovies = async () => {
     try {
@@ -25,13 +27,21 @@ const Carousel = () => {
     fetchMovies();
   }, []);
 
+  const handleMovieClick = (movie) => {
+    setSelectedMovie(movie);
+  };
+
   return (
     <div className="carousel">
-      {movies.map((movie) => (
-        <div className="carousel-content" key={movie.id}>
-          <Movie movie={movie} />
-        </div>
-      ))}
+      {selectedMovie ? (
+        <DetailsMovie movie={selectedMovie} />
+      ) : (
+        movies.map((movie) => (
+          <div className="carousel-content" key={movie.id}>
+            <Movie movie={movie} handleMovieClick={handleMovieClick} />
+          </div>
+        ))
+      )}
       <button className="boton" onClick={fetchMovies}>
         &gt;
       </button>
@@ -40,6 +50,7 @@ const Carousel = () => {
 };
 
 export default Carousel;
+
 
 
 
