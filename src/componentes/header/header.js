@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './header.css';
 import logo from '../../imagenes/logo.png';
 
-const Header = () => {
+const Header = ({ handleFormVisibility, handleFormVisibilityInicioSesion }) => {
   return (
     <header>
       <div className="logoDiv">
@@ -17,8 +17,8 @@ const Header = () => {
       <div className="login">
         <a className="dropbtn">Iniciar sesión / Registrarse</a>
         <div className="login-content">
-          <button>Inicio</button>
-          <button>Registrarse</button>
+          <button onClick={handleFormVisibilityInicioSesion}>Inicio</button>
+          <button onClick={handleFormVisibility}>Registrarse</button>
         </div>
       </div>
     </header>
@@ -26,4 +26,5 @@ const Header = () => {
 };
 
 export default Header;
+
 
