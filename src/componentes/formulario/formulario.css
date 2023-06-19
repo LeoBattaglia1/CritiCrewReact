@@ -33,10 +33,25 @@ input[type="password"]{
     text-align: center;
     color: #999;
 }
+.button-container {
+  display: flex;
+  justify-content: center;
+
+  }
+  
+
+  .back-button {
+    width: 30%;
+    font-size: 20px;
+    background-color: #f1f1f1;
+border: none;
+    }
+    
+
 .button{
-    margin-top: 15px;
+
     border: none;
-    width: 100%;
+    width: 70%;
     color: white;
     font-size: 20px;
     background: orange;
@@ -44,11 +59,13 @@ input[type="password"]{
     border-radius: 5px;
     cursor: pointer;
 }
+
 .button:hover{
     background: rgb(231, 220, 200);
 }
+
 p{
-    margin-bottom: 45px;
+    margin-bottom: 65px;
     text-align: center;
 }
 

@@ -54,6 +54,7 @@ header {
 
 .dropbtn:hover{
   cursor: pointer;
+  color: #b95d23;
 }
 .login-content {
   display: none;
@@ -73,9 +74,9 @@ header {
   display: block;
 
   height: 50px;
-  width: 150px;
+  width: 250px;
   color: #070707;
-  font-size: 14px;
+  font-size: 20px;
 
   border-radius: 4px;
 }

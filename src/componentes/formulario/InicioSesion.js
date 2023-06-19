@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {  } from 'react';
 import './formulario.css';
 
-const InicioSesion = () => {
+const InicioSesion = ({handleBackClick}) => {
+  
+
+
   return (
    
     <form className="formulario">
@@ -15,7 +18,11 @@ const InicioSesion = () => {
           <i className="fa-solid fa-key icon"></i>
           <input type="password" placeholder="Contraseña" />
         </div>
-        <input type="submit" value="Entrar" className="button" />
+        <div className="button-container">
+          <input type="submit" value="Entrar" className="button" />
+          <button className="back-button" onClick={handleBackClick}>Volver</button>
+        </div>
+       
         <p>Al Registrarte, aceptas nuestras Condiciones de uso y Políticas de privacidad.</p>
       </div>
     </form>

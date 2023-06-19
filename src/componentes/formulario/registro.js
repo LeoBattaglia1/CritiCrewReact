@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { } from 'react';
 import './formulario.css';
 
-const Registro = () => {
+const Registro = ({handleBackClick}) => {
+ 
+
   return (
    
     <form className="formulario">
@@ -47,8 +49,10 @@ const Registro = () => {
             <label className="checkbox-label" htmlFor="inlineCheckbox6">Otro</label>
           </div>
         </div>
-
-        <input type="submit" value="Registrate" className="button" />
+        <div className="button-container">
+          <input type="submit" value="Registrarse" className="button" />
+          <button className="back-button" onClick={handleBackClick}>Volver</button>
+        </div>
         <p>Al Registrarte, aceptas nuestras Condiciones de uso y Políticas de privacidad.</p>
       </div>
     </form>
