@@ -44,28 +44,18 @@ const Carousel = () => {
         <DetailsMovie movie={selectedMovie} handleBackClick={handleBackClick} />
       ) : (
         <>
-          <div className="carousel-content">
-            <Movie movie={movies[0]} handleDetailsVisibility={handleDetailsVisibility} />
-          </div>
-          <div className="carousel-content">
-            <Movie movie={movies[1]} handleDetailsVisibility={handleDetailsVisibility} />
-          </div>
-          <div className="carousel-content">
-            <Movie movie={movies[2]} handleDetailsVisibility={handleDetailsVisibility} />
-          </div>
-          <div className="carousel-content">
-            <Movie movie={movies[3]} handleDetailsVisibility={handleDetailsVisibility} />
-          </div>
+          {movies.map((movie) => (
+            <div key={movie.id} className="carousel-content">
+              <Movie movie={movie} handleDetailsVisibility={handleDetailsVisibility} />
+            </div>
+          ))}
           <button className="boton" onClick={fetchMovies}>
-        &gt;
-      </button>
+            &gt;
+          </button>
         </>
       )}
-     
     </div>
   );
 };
 
 export default Carousel;
-
-
