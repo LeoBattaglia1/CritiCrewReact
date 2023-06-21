@@ -3,7 +3,6 @@ import './App.css';
 import Carousel from './componentes/carousel/carousel';
 import Header from './componentes/header/header';
 import Footer from './componentes/footer/footer';
-import Publicidad from './componentes/publicidad/publicidad';
 import Registro from './componentes/formulario/registro';
 import InicioSesion from './componentes/formulario/InicioSesion';
 import DetailsMovie from './componentes/details/detailsMovie';
@@ -12,34 +11,31 @@ const App = () => {
   const [showRegistro, setShowRegistro] = useState(false);
   const [showInicioSesion, setShowInicioSesion] = useState(false);
   const [showDetailsMovie, setShowDetailsMovie] = useState(false);
-  const [showCarousel, setShowCarousel] = useState(true);
+  const [selectedMovieId, setSelectedMovieId] = useState(null);
 
   const handleFormVisibilityRegistro = () => {
     setShowRegistro(true);
     setShowInicioSesion(false);
     setShowDetailsMovie(false);
-    setShowCarousel(false);
   };
 
   const handleFormVisibilityInicioSesion = () => {
     setShowRegistro(false);
     setShowInicioSesion(true);
     setShowDetailsMovie(false);
-    setShowCarousel(false);
   };
 
-  const handleDetailsVisibility = () => {
+  const handleDetailsVisibility = (movieId) => {
+    setSelectedMovieId(movieId);
     setShowRegistro(false);
     setShowInicioSesion(false);
     setShowDetailsMovie(true);
-    setShowCarousel(false);
   };
 
   const handleBackClick = () => {
-    setShowCarousel(true);
-    setShowDetailsMovie(false);
     setShowRegistro(false);
     setShowInicioSesion(false);
+    setShowDetailsMovie(false);
   };
 
   return (
@@ -49,26 +45,18 @@ const App = () => {
         handleFormVisibilityInicioSesion={handleFormVisibilityInicioSesion}
         handleDetailsVisibility={handleDetailsVisibility}
       />
-      <div className="content-wrapper">
-        {showRegistro ? (
-          <Registro handleBackClick={handleBackClick} />
-        ) : showInicioSesion ? (
-          <InicioSesion handleBackClick={handleBackClick} />
-        ) : showDetailsMovie ? (
-          <DetailsMovie handleBackClick={handleBackClick} />
-        ) : (
-          <Carousel />
-        )}
-        <Publicidad />
-      </div>
+      {showRegistro ? (
+        <Registro handleBackClick={handleBackClick} />
+      ) : showInicioSesion ? (
+        <InicioSesion handleBackClick={handleBackClick} />
+      ) : showDetailsMovie ? (
+        <DetailsMovie movieId={selectedMovieId} handleBackClick={handleBackClick} />
+      ) : (
+        <Carousel handleDetailsVisibility={handleDetailsVisibility} />
+      )}
       <Footer />
     </div>
   );
 };
 
 export default App;
-
-
-
-
-
