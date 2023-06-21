@@ -19,11 +19,9 @@ const InicioSesion = ({handleBackClick}) => {
           <input type="password" placeholder="Contraseña" />
         </div>
         <div className="button-container">
-          <input type="submit" value="Entrar" className="button" />
-          <button className="back-button" onClick={handleBackClick}>Volver</button>
+          <button className="button-submit" type="submit">Entrar</button>
+          <button className="button-back" onClick={handleBackClick}>Volver</button>
         </div>
-       
-        <p>Al Registrarte, aceptas nuestras Condiciones de uso y Políticas de privacidad.</p>
       </div>
     </form>
   );

@@ -1,0 +1,50 @@
+.comentarios {
+    margin-top: 20px;
+  }
+  
+  .chat {
+    border: 2px solid #020202;
+    background-color: aliceblue;
+    padding: 10px;
+    width: 200px;
+    height: 280px;
+    overflow-y: scroll;
+  }
+  
+  .chat > h3 {
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+    background-color: orange;
+  }
+
+  .chat > p {
+    font-size: 15px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+
+  .mensaje {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+  
+
+  .formulario-comentario {
+    margin-top: 10px;
+  }
+  
+  .formulario-comentario input[type="text"] {
+ width: 200px;
+    padding: 5px;
+  }
+  
+  .formulario-comentario button {
+    width: 100px;
+    justify-items: end;
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: orange;
+  }
+  

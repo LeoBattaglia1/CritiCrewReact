@@ -50,8 +50,8 @@ const Registro = ({handleBackClick}) => {
           </div>
         </div>
         <div className="button-container">
-          <input type="submit" value="Registrarse" className="button" />
-          <button className="back-button" onClick={handleBackClick}>Volver</button>
+          <button className="button-submit" type="submit">Registrarse</button>
+          <button className="button-back" onClick={handleBackClick}>Volver</button>
         </div>
         <p>Al Registrarte, aceptas nuestras Condiciones de uso y Políticas de privacidad.</p>
       </div>
