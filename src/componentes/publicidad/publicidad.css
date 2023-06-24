@@ -1,6 +1,11 @@
 .publicidad {
-    background-color: #4e4e4e;
+margin-top: 50px;
     display: flex;
     height: 420px;
   }
   
+  .publicidad img {
+    margin: 5px;
+    height: 350px;
+    width: 240px;
+  }
