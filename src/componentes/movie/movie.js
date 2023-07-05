@@ -15,10 +15,9 @@ const Movie = ({ movie, handleDetailsVisibility }) => {
   };
 
   return (
-    <div className="movie">
-      <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
-      <h2 onClick={handleClick} className="movie-title">{movie.title}</h2>
-    </div>
+
+      <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} onClick={handleClick} alt={movie.title} className="imagen"/>
+
   );
 };
 

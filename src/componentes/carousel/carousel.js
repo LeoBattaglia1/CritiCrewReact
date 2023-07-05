@@ -1,33 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Movie from '../movie/movie';
-import DetailsMovie from '../details/detailsMovie';
 import Publicidad from '../publicidad/publicidad';
+import DetailsMovie from '../details/detailsMovie';
 import './carousel.css';
 
 const Carousel = () => {
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [showDetails, setShowDetails] = useState(false);
+  const [page, setPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchMovies = async () => {
+    setIsLoading(true);
     try {
-      const movieIds = Array.from({ length: 4 }, () => Math.floor(Math.random() * 550) + 1);
       const apiKey = '83bc0d3d812780eff004a2baed4eaf17';
-      const promises = movieIds.map((movieId) =>
-        axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`)
-      );
-      const responses = await Promise.all(promises);
-      const moviesData = responses.map((response) => response.data);
-      setMovies(moviesData);
+      const response = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=${page}`);
+      const moviesData = response.data.results;
+      setMovies((prevMovies) => [...prevMovies, ...moviesData]);
+      setIsLoading(false);
     } catch (error) {
       console.error(error);
+      setIsLoading(false);
     }
   };
 
   useEffect(() => {
     fetchMovies();
-  }, []);
+  }, [page]);
 
   const handleDetailsVisibility = (movie) => {
     setSelectedMovie(movie);
@@ -39,21 +40,30 @@ const Carousel = () => {
     setShowDetails(false);
   };
 
+  const handleLoadMore = () => {
+    setPage((prevPage) => prevPage + 1);
+  };
+
   return (
     <div className="carousel">
       {showDetails ? (
         <DetailsMovie movie={selectedMovie} handleBackClick={handleBackClick} />
       ) : (
         <>
-          {movies.map((movie) => (
-            <div key={movie.id} className="carousel-content">
-              <Movie movie={movie} handleDetailsVisibility={handleDetailsVisibility} />
+          <div className="carousel-grid">
+            {movies.map((movie) => (
+              <div key={movie.id} className="carousel-content">
+                <Movie movie={movie} handleDetailsVisibility={handleDetailsVisibility} />
+              </div>
+            ))}
+          </div>
+          {isLoading && <p>Loading...</p>}
+          {!isLoading && (
+            <div className="load-more-container">
+              < Publicidad />
+              <button className="load-more-button" onClick={handleLoadMore}>Ver Mas ↓</button>
             </div>
-          ))}
-          <button className="boton" onClick={fetchMovies}>
-            &gt;
-          </button>
-          <Publicidad />
+          )}
         </>
       )}
     </div>

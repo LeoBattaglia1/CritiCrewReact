@@ -1,11 +1,10 @@
 header {
   display: flex;
   flex-direction: row;
-  justify-content:space-around;
+  justify-content: space-around;
   align-items: center;
-  background-color: #ff914d;
+  background-color: black;
   color: #fff;
-
   width: 100%;
   height: 8%;
 }
@@ -14,12 +13,22 @@ header {
   flex: 1;
 }
 
+.logoButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
 .logoHeader {
   max-height: 90px;
 }
 
 .input-group {
   flex: 2;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente el contenido */
+  align-items: center; /* Centra verticalmente el contenido */
 }
 
 .form-control.input-lg {
@@ -43,19 +52,17 @@ header {
   background-color: #444444;
 }
 
-
-
-
-.dropbtn{
+.dropbtn {
   flex: 3;
   font-size: 22px;
   padding: 8px 15px;
 }
 
-.dropbtn:hover{
+.dropbtn:hover {
   cursor: pointer;
   color: #b95d23;
 }
+
 .login-content {
   display: none;
   position: absolute;
@@ -72,12 +79,10 @@ header {
 
 .login-content button {
   display: block;
-
   height: 50px;
   width: 250px;
   color: #070707;
   font-size: 20px;
-
   border-radius: 4px;
 }
 

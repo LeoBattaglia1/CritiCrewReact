@@ -3,10 +3,16 @@ import './header.css';
 import logo from '../../imagenes/logo.png';
 
 const Header = ({ handleFormVisibilityRegistro, handleFormVisibilityInicioSesion }) => {
+  const handleLogoClick = () => {
+    window.location.reload(); // Recargar la página al hacer clic en el logo
+  };
+
   return (
     <header>
       <div className="logoDiv">
-        <img className="logoHeader" src={logo} alt="Logo" />
+        <button className="logoButton" onClick={handleLogoClick}>
+          <img className="logoHeader" src={logo} alt="Logo" />
+        </button>
       </div>
 
       <div className="input-group">
@@ -26,5 +32,3 @@ const Header = ({ handleFormVisibilityRegistro, handleFormVisibilityInicioSesion
 };
 
 export default Header;
-
-

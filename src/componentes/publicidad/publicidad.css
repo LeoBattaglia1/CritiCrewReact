@@ -1,11 +1,7 @@
-.publicidad {
-margin-top: 50px;
-    display: flex;
-    height: 420px;
-  }
+
   
   .publicidad img {
     margin: 5px;
-    height: 350px;
-    width: 240px;
+    height: 100px;
+    width: 1000px;
   }
