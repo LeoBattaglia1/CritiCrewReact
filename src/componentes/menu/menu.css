@@ -1,0 +1,33 @@
+.genre-cord {
+    height: 12%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -20px;
+  
+  }
+  
+  .genre-cord button {
+    flex: 1;
+    height: 100%;
+    background-color: #333;
+    font-size: 15px;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .genre-cord h3 {
+    background-color: #333;
+    color: #fff;
+    margin: 0;
+    padding: 13px; /* Espaciado alrededor del título */
+  }
+  
+  
+  .genre-cord button:focus {
+    background-color: #330ac9;
+  }
+  
