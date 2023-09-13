@@ -56,8 +56,10 @@
   cursor: pointer;
 
 
-  /* Estilos al pasar el cursor sobre el botón */
+
   &:hover {
     background-color: #333333;
   }
 }
+
+

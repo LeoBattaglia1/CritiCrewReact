@@ -1,8 +1,44 @@
-import React, { } from 'react';
+import React, { useState } from 'react';
 import './formulario.css';
 
-const Registro = ({handleBackClick}) => {
- 
+
+
+const Registro = ({ handleBackClick }) => {
+  const [nombreCompleto, setNombreCompleto] = useState('');
+  const [correoElectronico, setCorreoElectronico] = useState('');
+  const [contrasena, setContrasena] = useState('');
+
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+  
+    const data = {
+      nombre: nombreCompleto,
+      correo: correoElectronico,
+      contraseña: contrasena,
+      // Otros campos si los tienes
+    };
+  
+    try {
+      const response = await fetch('http://localhost:3306/usuarios', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+  
+      if (!response.ok) {
+        throw new Error('Error al registrar el usuario');
+      }
+  
+
+  
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+  
 
   return (
    
@@ -60,3 +96,5 @@ const Registro = ({handleBackClick}) => {
 };
 
 export default Registro;
+
+
