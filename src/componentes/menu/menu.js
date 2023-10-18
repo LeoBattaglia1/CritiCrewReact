@@ -1,7 +1,7 @@
 import React from 'react';
 import './menu.css';
 
-const Menu = ({ genres, handleGenreClick, handleNewsClick, handleTopRatedClick }) => {
+const Menu = ({ genres, handleGenreClick}) => {
     return (
         <div className="genre-cord">
           <h3>Generos:</h3>

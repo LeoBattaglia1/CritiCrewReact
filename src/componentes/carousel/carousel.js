@@ -8,9 +8,9 @@ import './carousel.css';
 
 const Carousel = () => {
   const [movies, setMovies] = useState([]);
-  const [filteredMovies, setFilteredMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [showDetails, setShowDetails] = useState(false);
+  const [showMenu, setShowMenu] = useState(true); // Nuevo estado para controlar la visibilidad del menú
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [genres, setGenres] = useState([
@@ -22,10 +22,10 @@ const Carousel = () => {
     { id: 14, name: 'Fantasia' },
     { id: 27, name: 'Terror' },
     { id: 878, name: 'Ciencia Ficcion' },
-// los numeros son los id de cada genero obtenidos de la api
   ]);
 
   const [selectedGenreId, setSelectedGenreId] = useState(null);
+
   const fetchMovies = async (genreId = null) => {
     setIsLoading(true);
     try {
@@ -49,11 +49,13 @@ const Carousel = () => {
   const handleDetailsVisibility = (movie) => {
     setSelectedMovie(movie);
     setShowDetails(true);
+    setShowMenu(false); // Oculta el menú cuando se muestra DetailsMovie
   };
 
   const handleBackClick = () => {
     setSelectedMovie(null);
     setShowDetails(false);
+    setShowMenu(true); // Muestra el menú cuando vuelves atrás desde DetailsMovie
   };
 
   const handleLoadMore = () => {
@@ -68,7 +70,7 @@ const Carousel = () => {
 
   return (
     <div className="carousel">
-      <Menu genres={genres} handleGenreClick={handleGenreClick} />
+      {showMenu && <Menu genres={genres} handleGenreClick={handleGenreClick} />}
 
       {showDetails ? (
         <DetailsMovie movie={selectedMovie} handleBackClick={handleBackClick} />

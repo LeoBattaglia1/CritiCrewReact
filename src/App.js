@@ -12,6 +12,7 @@ const App = () => {
   const [showInicioSesion, setShowInicioSesion] = useState(false);
   const [showDetailsMovie, setShowDetailsMovie] = useState(false);
   const [selectedMovieId, setSelectedMovieId] = useState(null);
+ 
 
   const handleFormVisibilityRegistro = () => {
     setShowRegistro(true);
@@ -23,6 +24,7 @@ const App = () => {
     setShowRegistro(false);
     setShowInicioSesion(true);
     setShowDetailsMovie(false);
+
   };
 
   const handleDetailsVisibility = (movieId) => {
@@ -30,12 +32,14 @@ const App = () => {
     setShowRegistro(false);
     setShowInicioSesion(false);
     setShowDetailsMovie(true);
+ 
   };
 
   const handleBackClick = () => {
     setShowRegistro(false);
     setShowInicioSesion(false);
     setShowDetailsMovie(false);
+
   };
 
   return (
@@ -54,7 +58,7 @@ const App = () => {
       ) : (
         <Carousel handleDetailsVisibility={handleDetailsVisibility} />
       )}
-      <Footer />
+     <Footer />
     </div>
   );
 };

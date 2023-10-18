@@ -9,6 +9,8 @@ justify-content: space-between;
 }
 
 .trailer {
+  margin-top: 20px;
+  margin-left: 15px;
   width: 20%;
   object-fit: cover;
 }
@@ -20,7 +22,7 @@ justify-content: space-between;
 
 .contenido {
   margin-left: 200px;
-  margin-right: 10px;
+
   width: 30%;
   display: flex;
   flex-direction: column;
@@ -50,40 +52,15 @@ text-align: center;
   width: 30%;
 }
 
-.button{
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 10px;
 
+.puntuacion{
+border-style: solid;
+  margin-top: 5px;
+  padding: 10px;
 }
-
-.back {
-  width: 70%;
-  font-size: 20px;
-  background-color: #f1f1f1;
-  border: none;
-  margin-left: 15px;
-  cursor: pointer;
-}
-
-.vote {
-  border: none;
-  width: 70%;
-  color: white;
-  font-size: 20px;
-  background: orange;
-  padding: 15px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.vote:hover {
-  background-color: #e65c00;
-}
-
 
 .chatComentarios{
-  width: 20%;
+  width: 21%;
 } 
       
       

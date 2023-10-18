@@ -6,7 +6,7 @@ footer {
     background-color: black;
     color: #fff;
     width: 100%;
-    height: 70px;
+    height: 50px;
   }
   
   
@@ -37,3 +37,30 @@ footer {
   .links a:hover {
     text-decoration: underline;
   }
+
+  
+  .instagram {
+    position: relative; /* Establece el botón como un contexto de posición */
+    left: 500px;
+    bottom: 34px
+  }
+
+  .facebook {
+    position: relative; /* Establece el botón como un contexto de posición */
+    left: 540px;
+    bottom: 34px
+  }
+
+  .x {
+    position: relative; /* Establece el botón como un contexto de posición */
+    left: 580px;
+    bottom: 34px
+  }
+  
+  
+  .logoRedes {
+    max-height: 30px;
+    position: absolute; /* Posiciona el elemento de manera absoluta dentro del botón */
+    top: 50%; /* Lo centra verticalmente dentro del botón */
+  }
+  
