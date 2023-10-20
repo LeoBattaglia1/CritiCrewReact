@@ -36,9 +36,9 @@ const Registro = ({ handleBackClick }) => {
     };
   
     try {
-      const response = await fetch('http://localhost:3000/usuario', {
+      const response = await fetch('/api/usuario', {
         method: 'POST',
-        headers: {
+        headers: { 'Access-Control-Allow-Origin': '*',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
@@ -46,10 +46,9 @@ const Registro = ({ handleBackClick }) => {
   
       if (!response.ok) {
         throw new Error('Error al registrar el usuario');
+      }else{
+        console.log(response.json)
       }
-  
-
-  
     } catch (error) {
       console.error('Error:', error);
     }
@@ -175,10 +174,9 @@ const Registro = ({ handleBackClick }) => {
         
         </div> 
         <div className="button-container">
-        <button className="button-submit" type="submit"  onClick={handleBackClick}>Registrarse</button>
+        <button className="button-submit" type="submit" >Registrarse</button>
           <button className="button-back" onClick={handleBackClick}>Volver</button>
         </div>
-        <p>Al Registrarte, aceptas nuestras Condiciones de uso y Políticas de privacidad.</p>
       </div>
     </form>
   );

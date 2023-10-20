@@ -6,12 +6,11 @@ import Comentarios from '../comentarios/comentarios';
 import Puntuacion from '../puntuacion/puntuacion';
 
 const DetailsMovie = ({ movie, handleBackClick }) => {
-  const { title, release_date, overview } = movie;
+  const { title, overview } = movie;
   const [trailerId, setTrailerId] = useState(null);
   const [verMas, setVerMas] = useState(false);
 
   useEffect(() => {
-    
     const fetchTrailer = async () => {
       try {
         const apiKey = '83bc0d3d812780eff004a2baed4eaf17';
@@ -31,7 +30,6 @@ const DetailsMovie = ({ movie, handleBackClick }) => {
     fetchTrailer();
   }, [movie.id]);
 
-
   const handleToggleOverview = () => {
     setVerMas(!verMas);
   };
@@ -47,7 +45,6 @@ const DetailsMovie = ({ movie, handleBackClick }) => {
         <p>
           <strong>Sinopsis:</strong>{' '}
           {verMas ? overview : `${overview?.slice(0, 150)}...`}
-
           {overview && overview.length > 300 && (
             <a href="#!" onClick={handleToggleOverview}>
               {verMas ? 'Ver menos' : 'Ver más'}
@@ -55,12 +52,14 @@ const DetailsMovie = ({ movie, handleBackClick }) => {
           )}
         </p>
         <div className="puntuacion">
-        <Puntuacion />
+          <Puntuacion />
         </div>
       </div>
+
       <div className="chatComentarios">
         <Comentarios />
       </div>
+      <button onClick={handleBackClick}>Volver</button>
     </div>
   );
 };
