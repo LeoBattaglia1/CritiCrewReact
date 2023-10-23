@@ -38,6 +38,7 @@ const DetailsMovie = ({ movie, handleBackClick }) => {
     <div className='detalle'>
       <div className='trailer'>
         <YouTube videoId={trailerId} opts={{ width: '500px', height: '350px' }} />
+        <button className="volver" onClick={handleBackClick}> ← Volver</button>
       </div>
 
       <div className='contenido'>
@@ -59,7 +60,7 @@ const DetailsMovie = ({ movie, handleBackClick }) => {
       <div className="chatComentarios">
         <Comentarios />
       </div>
-      <button onClick={handleBackClick}>Volver</button>
+      
     </div>
   );
 };

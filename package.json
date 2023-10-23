@@ -1,9 +1,7 @@
 {
   "name": "criticrew",
   "version": "0.1.0",
-  "proxy": {
-    "/api/usuario": "http://localhost:3010/usuario"
-  },
+  "proxy": "http://localhost:3000",
  
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

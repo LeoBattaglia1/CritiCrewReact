@@ -8,11 +8,11 @@ import InicioSesion from './componentes/formulario/InicioSesion';
 import DetailsMovie from './componentes/details/detailsMovie';
 
 const App = () => {
+  const [showCarousel, setShowCarousel] = useState(true);
   const [showRegistro, setShowRegistro] = useState(false);
   const [showInicioSesion, setShowInicioSesion] = useState(false);
   const [showDetailsMovie, setShowDetailsMovie] = useState(false);
   const [selectedMovieId, setSelectedMovieId] = useState(null);
- 
 
   const handleFormVisibilityRegistro = () => {
     setShowRegistro(true);
@@ -24,7 +24,6 @@ const App = () => {
     setShowRegistro(false);
     setShowInicioSesion(true);
     setShowDetailsMovie(false);
-
   };
 
   const handleDetailsVisibility = (movieId) => {
@@ -32,14 +31,12 @@ const App = () => {
     setShowRegistro(false);
     setShowInicioSesion(false);
     setShowDetailsMovie(true);
- 
   };
 
   const handleBackClick = () => {
     setShowRegistro(false);
     setShowInicioSesion(false);
     setShowDetailsMovie(false);
-
   };
 
   return (
@@ -54,13 +51,17 @@ const App = () => {
       ) : showInicioSesion ? (
         <InicioSesion handleBackClick={handleBackClick} />
       ) : showDetailsMovie ? (
-        <DetailsMovie movieId={selectedMovieId} handleBackClick={handleBackClick} />
-      ) : (
-        <Carousel handleDetailsVisibility={handleDetailsVisibility} />
-      )}
-     <Footer />
-    </div>
-  );
-};
+        <DetailsMovie
+          movie={selectedMovieId}
+          handleBackClick={handleBackClick}
+          showDetailsMovie={showDetailsMovie}
+          />
+          ) : showCarousel ? (
+            <Carousel handleDetailsVisibility={handleDetailsVisibility} />
+          ) : null}
+          <Footer />
+        </div>
+      );
+    };
 
 export default App;

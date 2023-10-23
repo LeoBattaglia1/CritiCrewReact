@@ -1,12 +1,19 @@
 .detalle {
-
+  background-color: #5c5454;
   display: flex;
   width: 100%;
-  height: 90%;
+  height: 440px;
 
 justify-content: space-between;
-
 }
+
+.volver {
+  background-color: rgb(116, 114, 114);
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+}
+
 
 .trailer {
   margin-top: 20px;
