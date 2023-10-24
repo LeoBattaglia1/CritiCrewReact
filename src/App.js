@@ -13,6 +13,7 @@ const App = () => {
   const [showInicioSesion, setShowInicioSesion] = useState(false);
   const [showDetailsMovie, setShowDetailsMovie] = useState(false);
   const [selectedMovieId, setSelectedMovieId] = useState(null);
+  const [userId, setUserId] = useState(null);
 
   const handleFormVisibilityRegistro = () => {
     setShowRegistro(true);
@@ -39,6 +40,10 @@ const App = () => {
     setShowDetailsMovie(false);
   };
 
+  const handleSetUserId = (id) => {
+    setUserId(id);
+  };
+
   return (
     <div>
       <Header
@@ -49,19 +54,19 @@ const App = () => {
       {showRegistro ? (
         <Registro handleBackClick={handleBackClick} />
       ) : showInicioSesion ? (
-        <InicioSesion handleBackClick={handleBackClick} />
+        <InicioSesion handleBackClick={handleBackClick} handleSetUserId={handleSetUserId} />
       ) : showDetailsMovie ? (
         <DetailsMovie
           movie={selectedMovieId}
           handleBackClick={handleBackClick}
           showDetailsMovie={showDetailsMovie}
-          />
-          ) : showCarousel ? (
-            <Carousel handleDetailsVisibility={handleDetailsVisibility} />
-          ) : null}
-          <Footer />
-        </div>
-      );
-    };
+        />
+      ) : showCarousel ? (
+        <Carousel handleDetailsVisibility={handleDetailsVisibility} />
+      ) : null}
+      <Footer id={userId} />
+    </div>
+  );
+};
 
 export default App;

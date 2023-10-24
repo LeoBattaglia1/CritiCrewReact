@@ -3,12 +3,11 @@ import Modal from '../modal/modal';
 import './formulario.css';
 
 
-const InicioSesion = ({ handleBackClick }) => {
+const InicioSesion = ({ handleBackClick, handleSetUserId }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [mensajeModal, setMensajeModal] = useState(null);
-  const [userId, setUserId] = useState(null);
-  
+    
   const handleClose = () => {
     setMensajeModal(null);
   };
@@ -32,8 +31,7 @@ const InicioSesion = ({ handleBackClick }) => {
      
         setMensajeModal(data.message);
       } else {
-   
-        setUserId(data.userId);
+        handleSetUserId(data)
         handleBackClick();
       }
 
