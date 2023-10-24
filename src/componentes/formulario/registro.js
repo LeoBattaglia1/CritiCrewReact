@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Modal from '../modal/modal'; 
 import './formulario.css';
 
 
@@ -8,55 +9,52 @@ const Registro = ({ handleBackClick }) => {
   const [correoElectronico, setCorreoElectronico] = useState('');
   const [contrasena, setContrasena] = useState('');
   const [generosFavoritos, setGenerosFavoritos] = useState([]);
+  const [mensajeModal, setMensajeModal] = useState(null);
 
   const handleGeneroChange = (event) => {
-    // Obtener el valor (nombre del género) del checkbox seleccionado
-    const generoSeleccionado = event.target.value;
-    
-    // Obtener el número asociado del atributo "data-numero" del checkbox
-    const numeroAsociado = parseInt(event.target.dataset.numero, 10);
+    const generoSeleccionado = parseInt(event.target.value, 10);
   
     if (event.target.checked) {
-      // Si el checkbox está marcado, agregar el género a la lista de favoritos
-      setGenerosFavoritos([...generosFavoritos, { genero: generoSeleccionado, numero: numeroAsociado }]);
+      setGenerosFavoritos([...generosFavoritos, generoSeleccionado]);
     } else {
-      // Si el checkbox está desmarcado, remover el género de la lista de favoritos
-      setGenerosFavoritos(generosFavoritos.filter((genero) => genero.genero !== generoSeleccionado));
+      setGenerosFavoritos(generosFavoritos.filter((numero) => numero !== generoSeleccionado));
     }
+  };
+  
+  const handleClose = () => {
+    setMensajeModal(null);
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-  
-    const data = {
-      nombre: nombreCompleto,
-      correo: correoElectronico,
-      contraseña: contrasena,
-      generos: generosFavoritos,
-    };
+
+    
   
     try {
-      const response = await fetch('/api/usuario', {
+      const response = await fetch('http://localhost:3010/usuario/', {
         method: 'POST',
-        headers: { 'Access-Control-Allow-Origin': '*',
+        headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({nombre: nombreCompleto, correo: correoElectronico, contraseña: contrasena,  genero: generosFavoritos,}),
       });
-  
+    
       if (!response.ok) {
-        throw new Error('Error al registrar el usuario');
-      }else{
-        console.log(response.json)
-      }
-    } catch (error) {
+        const errorData = await response.json(); 
+        throw new Error(errorData.message); 
+        
+    }else{
+      handleBackClick();
+    }} catch (error) {
       console.error('Error:', error);
+      setMensajeModal(error.message);
     }
   };
   
+  
 
   return (
-   
+    <>
     <form className="formulario" onSubmit={handleSubmit}>
       <div className="contenedor">
         <h1>Registrate</h1>
@@ -84,8 +82,7 @@ const Registro = ({ handleBackClick }) => {
                 className="form-check-input"
                 type="checkbox"
                 id="inlineCheckbox1"
-                value="Accion"
-                data-numero="1"
+                value="1"
                 onChange={handleGeneroChange}
               />
               <label className="checkbox-label" htmlFor="inlineCheckbox1">
@@ -97,8 +94,7 @@ const Registro = ({ handleBackClick }) => {
                 className="form-check-input"
                 type="checkbox"
                 id="inlineCheckbox2"
-                value="Animacion"
-                data-numero="2"
+                value="2"
                 onChange={handleGeneroChange}
               />
               <label className="checkbox-label" htmlFor="inlineCheckbox2">
@@ -110,8 +106,7 @@ const Registro = ({ handleBackClick }) => {
                 className="form-check-input"
                 type="checkbox"
                 id="inlineCheckbox3"
-                value="Comedia"
-                data-numero="3"
+                value="3"
                 onChange={handleGeneroChange}
               />
               <label className="checkbox-label" htmlFor="inlineCheckbox3">
@@ -123,8 +118,7 @@ const Registro = ({ handleBackClick }) => {
                 className="form-check-input"
                 type="checkbox"
                 id="inlineCheckbox4"
-                value="Drama"
-                data-numero="4"
+                value="4"
                 onChange={handleGeneroChange}
               />
               <label className="checkbox-label" htmlFor="inlineCheckbox4">
@@ -136,8 +130,7 @@ const Registro = ({ handleBackClick }) => {
                 className="form-check-input"
                 type="checkbox"
                 id="inlineCheckbox5"
-                value="Fantasia"
-                data-numero="5"
+                value="5"
                 onChange={handleGeneroChange}
               />
               <label className="checkbox-label" htmlFor="inlineCheckbox5">
@@ -149,8 +142,7 @@ const Registro = ({ handleBackClick }) => {
                 className="form-check-input"
                 type="checkbox"
                 id="inlineCheckbox6"
-                value="Terror"
-                data-numero="6"
+                value="6"
                 onChange={handleGeneroChange}
               />
               <label className="checkbox-label" htmlFor="inlineCheckbox6">
@@ -162,8 +154,7 @@ const Registro = ({ handleBackClick }) => {
                 className="form-check-input"
                 type="checkbox"
                 id="inlineCheckbox7"
-                value="Ciencia Ficcion"
-                data-numero="7"
+                value="7"
                 onChange={handleGeneroChange}
               />
               <label className="checkbox-label" htmlFor="inlineCheckbox7">
@@ -179,6 +170,9 @@ const Registro = ({ handleBackClick }) => {
         </div>
       </div>
     </form>
+
+{mensajeModal && <Modal mensaje={mensajeModal} handleClose={handleClose} />}
+</>
   );
 };
 
