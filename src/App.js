@@ -62,7 +62,7 @@ const App = () => {
           showDetailsMovie={showDetailsMovie}
         />
       ) : showCarousel ? (
-        <Carousel handleDetailsVisibility={handleDetailsVisibility} />
+        <Carousel handleDetailsVisibility={handleDetailsVisibility} idUsuario={userId}/>
       ) : null}
       <Footer id={userId} />
     </div>

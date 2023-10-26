@@ -6,11 +6,11 @@ import DetailsMovie from '../details/detailsMovie';
 import Menu from '../menu/menu';
 import './carousel.css';
 
-const Carousel = () => {
+const Carousel = ({idUsuario}) => {
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [showDetails, setShowDetails] = useState(false);
-  const [showMenu, setShowMenu] = useState(true); // Nuevo estado para controlar la visibilidad del menú
+  const [showMenu, setShowMenu] = useState(true); 
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [genres, setGenres] = useState([
@@ -73,7 +73,7 @@ const Carousel = () => {
       {showMenu && <Menu genres={genres} handleGenreClick={handleGenreClick} />}
 
       {showDetails ? (
-        <DetailsMovie movie={selectedMovie} handleBackClick={handleBackClick} />
+        <DetailsMovie movie={selectedMovie} handleBackClick={handleBackClick} idUsuario={idUsuario}/>
       ) : (
         <>
           <div className="carousel-grid">

@@ -28,8 +28,6 @@ const Registro = ({ handleBackClick }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    
-  
     try {
       const response = await fetch('http://localhost:3010/usuario/', {
         method: 'POST',

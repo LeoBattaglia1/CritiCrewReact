@@ -20,7 +20,7 @@ const Footer = ({ id }) => {
         })
         .then(response => response.json())
         .then(data => {
-         console.log(data.nombre) 
+       
           if (data.nombre) {
             setUsername(data.nombre);
           }
