@@ -1,23 +1,20 @@
-
-
-  .imagen {
+.imagen {
   border-radius: 10px;
-    width: 280px;
-    height: 150px;
-    margin: 10px;
-    cursor: pointer;
-  }
+  width: 280px;
+  height: 150px;
+  margin: 10px;
+  cursor: pointer;
+}
 
-  .noMovie {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-    background-color: #f1f1f1;
-  }
-  
-  .noMovie h2 {
-    color: #555;
-    font-size: 18px;
-  }
-  
+.noMovie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: #f1f1f1;
+}
+
+.noMovie h2 {
+  color: #555;
+  font-size: 18px;
+}

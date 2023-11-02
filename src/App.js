@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import './App.css';
-import Carousel from './componentes/carousel/carousel';
-import Header from './componentes/header/header';
-import Footer from './componentes/footer/footer';
-import Registro from './componentes/formulario/registro';
-import InicioSesion from './componentes/formulario/InicioSesion';
-import DetailsMovie from './componentes/details/detailsMovie';
+import React, { useState } from "react";
+import "./App.css";
+import Carousel from "./componentes/carousel/carousel";
+import Header from "./componentes/header/header";
+import Footer from "./componentes/footer/footer";
+import Registro from "./componentes/formulario/registro";
+import InicioSesion from "./componentes/formulario/InicioSesion";
+import DetailsMovie from "./componentes/details/detailsMovie";
 
 const App = () => {
   const [showCarousel, setShowCarousel] = useState(true);
@@ -54,7 +54,10 @@ const App = () => {
       {showRegistro ? (
         <Registro handleBackClick={handleBackClick} />
       ) : showInicioSesion ? (
-        <InicioSesion handleBackClick={handleBackClick} handleSetUserId={handleSetUserId} />
+        <InicioSesion
+          handleBackClick={handleBackClick}
+          handleSetUserId={handleSetUserId}
+        />
       ) : showDetailsMovie ? (
         <DetailsMovie
           movie={selectedMovieId}
@@ -62,7 +65,10 @@ const App = () => {
           showDetailsMovie={showDetailsMovie}
         />
       ) : showCarousel ? (
-        <Carousel handleDetailsVisibility={handleDetailsVisibility} idUsuario={userId}/>
+        <Carousel
+          handleDetailsVisibility={handleDetailsVisibility}
+          idUsuario={userId}
+        />
       ) : null}
       <Footer id={userId} />
     </div>

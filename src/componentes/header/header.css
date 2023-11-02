@@ -27,8 +27,10 @@ header {
 .input-group {
   flex: 2;
   display: flex;
-  justify-content: center; /* Centra horizontalmente el contenido */
-  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center;
+  /* Centra horizontalmente el contenido */
+  align-items: center;
+  /* Centra verticalmente el contenido */
 }
 
 .form-control.input-lg {

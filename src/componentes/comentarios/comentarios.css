@@ -1,52 +1,48 @@
 .comentarios {
-    margin-top: 20px;
-  }
-  
-  .chat {
-    border: 2px solid #020202;
-    background-color: aliceblue;
-    padding: 10px;
-    width: 230px;
-    height: 270px;
-    overflow-y: scroll;
-   
-  }
-  
-  .chat > h3 {
-    margin: 0;
-    padding: 5px;
-    text-align: center;
-    background-color: orange;
-  }
+  margin-top: 20px;
+}
 
-  .chat > p {
-    font-size: 15px;
-    margin-top: 2px;
-    margin-bottom: 5px;
-    text-align: left;
-  }
+.chat {
+  border: 2px solid #020202;
+  background-color: aliceblue;
+  padding: 10px;
+  width: 230px;
+  height: 270px;
+  overflow-y: scroll;
+}
 
-  .mensaje {
-    font-size: 15px;
-    margin-bottom: 5px;
-  }
-  
+.chat > h3 {
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+  background-color: orange;
+}
 
-  .formulario-comentario {
-    margin-top: 10px;
-  }
-  
-  .formulario-comentario input[type="text"] {
-    width: 240px;
-    padding: 5px;
-  }
-  
-  .formulario-comentario button {
-    background-color: orange;
-    color: white;
-    font-size: 18px;
-    padding: 10px 100px;
-    margin-top: 5px;
-    
-  }
-  
+.chat > p {
+  font-size: 15px;
+  margin-top: 2px;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.mensaje {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.formulario-comentario {
+  margin-top: 10px;
+}
+
+.formulario-comentario input[type="text"] {
+  width: 240px;
+  padding: 5px;
+}
+
+.formulario-comentario button {
+  background-color: orange;
+  color: white;
+  font-size: 18px;
+  padding: 10px 100px;
+  margin-top: 5px;
+}

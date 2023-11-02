@@ -1,7 +1,17 @@
+.publicidad-container {
+  background-color: #464444e3; /* Color de fondo específico */
+  margin-left: 20px;
+  margin-top: 10px;
+  padding: 30px; /* Espaciado interior */
+  height: 1250px;
+  width: 230px;
+}
 
-  
-  .publicidad img {
-    margin: 5px;
-    height: 100px;
-    width: 1000px;
-  }
+.publicidad-item {
+  margin-bottom: 20px; /* Espacio entre las publicidades */
+}
+
+.publicidad-item img {
+  border-radius: 3px;
+  max-width: 100%; /* Asegura que las imágenes no se salgan del contenedor */
+}

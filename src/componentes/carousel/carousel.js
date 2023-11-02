@@ -1,27 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import Movie from '../movie/movie';
-import Publicidad from '../publicidad/publicidad';
-import DetailsMovie from '../details/detailsMovie';
-import Menu from '../menu/menu';
-import './carousel.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Movie from "../movie/movie";
+import Publicidad from "../publicidad/publicidad";
+import DetailsMovie from "../details/detailsMovie";
+import Menu from "../menu/menu";
+import "./carousel.css";
 
-const Carousel = ({idUsuario}) => {
+const Carousel = ({ idUsuario }) => {
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [showDetails, setShowDetails] = useState(false);
-  const [showMenu, setShowMenu] = useState(true); 
+  const [showMenu, setShowMenu] = useState(true);
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [genres, setGenres] = useState([
-    { id: 0, name: 'Todos' },
-    { id: 28, name: 'Acción' },
-    { id: 16, name: 'Animación' },
-    { id: 35, name: 'Comedia' },
-    { id: 18, name: 'Drama' },
-    { id: 14, name: 'Fantasia' },
-    { id: 27, name: 'Terror' },
-    { id: 878, name: 'Ciencia Ficcion' },
+    { id: 0, name: "Todos" },
+    { id: 28, name: "Acción" },
+    { id: 16, name: "Animación" },
+    { id: 35, name: "Comedia" },
+    { id: 18, name: "Drama" },
+    { id: 14, name: "Fantasia" },
+    { id: 27, name: "Terror" },
+    { id: 878, name: "Ciencia Ficcion" },
   ]);
 
   const [selectedGenreId, setSelectedGenreId] = useState(null);
@@ -29,9 +29,11 @@ const Carousel = ({idUsuario}) => {
   const fetchMovies = async (genreId = null) => {
     setIsLoading(true);
     try {
-      const apiKey = '83bc0d3d812780eff004a2baed4eaf17';
+      const apiKey = "83bc0d3d812780eff004a2baed4eaf17";
       const response = await axios.get(
-        `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&page=${page}&with_genres=${genreId || ''}`
+        `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&page=${page}&with_genres=${
+          genreId || ""
+        }`
       );
       const moviesData = response.data.results;
       setMovies((prevMovies) => [...prevMovies, ...moviesData]);
@@ -73,25 +75,35 @@ const Carousel = ({idUsuario}) => {
       {showMenu && <Menu genres={genres} handleGenreClick={handleGenreClick} />}
 
       {showDetails ? (
-        <DetailsMovie movie={selectedMovie} handleBackClick={handleBackClick} idUsuario={idUsuario}/>
+        <DetailsMovie
+          movie={selectedMovie}
+          handleBackClick={handleBackClick}
+          idUsuario={idUsuario}
+        />
       ) : (
         <>
-          <div className="carousel-grid">
-            {movies.map((movie) => (
-              <div key={movie.id} className="carousel-content">
-                <Movie movie={movie} handleDetailsVisibility={handleDetailsVisibility} />
-              </div>
-            ))}
-          </div>
-          {isLoading && <p>Loading...</p>}
-          {!isLoading && (
-            <div className="load-more-container">
-              <Publicidad />
+          <div className="contenedor-carusel">
+            <div className="carousel-grid">
+              {movies.map((movie) => (
+                <div key={movie.id} className="carousel-content">
+                  <Movie
+                    movie={movie}
+                    handleDetailsVisibility={handleDetailsVisibility}
+                  />
+                </div>
+              ))}
               <button className="load-more-button" onClick={handleLoadMore}>
                 Ver Mas ↓
               </button>
             </div>
-          )}
+
+            {isLoading && <p>Loading...</p>}
+            {!isLoading && (
+              <div className="load-more-container">
+                <Publicidad />
+              </div>
+            )}
+          </div>
         </>
       )}
     </div>

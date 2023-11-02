@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
-import './header.css';
-import logo from '../../imagenes/logo.png';
-import axios from 'axios';
+import React, { useState } from "react";
+import "./header.css";
+import logo from "../../imagenes/logo.png";
+import axios from "axios";
 
-const Header = ({ 
-  handleFormVisibilityRegistro, 
+const Header = ({
+  handleFormVisibilityRegistro,
   handleFormVisibilityInicioSesion,
-  handleDetailsVisibility 
+  handleDetailsVisibility,
 }) => {
   const [inputValue, setInputValue] = useState("");
 
-  
   const handleLogoClick = () => {
     window.location.reload(); // Recargar la página al hacer clic en el logo
   };
@@ -29,7 +28,7 @@ const Header = ({
   const handleSearchByName = async (movieName) => {
     try {
       const response = await axios.get(
-        `https://api.themoviedb.org/3/search/movie?api_key=83bc0d3d812780eff004a2baed4eaf17&query=${movieName}`
+        `https://api.themoviedb.org/3/search/movie?api_key=83bc0d3d812780eff004a2baed4eaf17&query=${movieName}`,
       );
       const movieData = response.data.results[0];
       return movieData; // Devuelve la información de la película
@@ -37,7 +36,6 @@ const Header = ({
       console.error(error);
     }
   };
-  
 
   return (
     <header>

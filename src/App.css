@@ -1,7 +1,6 @@
 .content-wrapper {
   display: flex;
   background-color: #cccccc1e;
- 
 }
 
 .carousel {
@@ -10,7 +9,7 @@
 
 .formulario {
   flex-basis: 80%;
-} 
+}
 
 .publicidad {
   flex-basis: 20%;
