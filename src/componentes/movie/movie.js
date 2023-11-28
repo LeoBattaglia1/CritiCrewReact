@@ -1,5 +1,5 @@
-import React from 'react';
-import './movie.css';
+import React from "react";
+import "./movie.css";
 
 const Movie = ({ movie, handleDetailsVisibility }) => {
   if (!movie) {
@@ -15,11 +15,13 @@ const Movie = ({ movie, handleDetailsVisibility }) => {
   };
 
   return (
-
-      <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} onClick={handleClick} alt={movie.title} className="imagen"/>
-
+    <img
+      src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+      onClick={handleClick}
+      alt={movie.title}
+      className="imagen"
+    />
   );
 };
 
 export default Movie;
-

@@ -1,72 +1,69 @@
 footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    color: #fff;
-    width: 100%;
-    height: 50px;
-  }
-  
-  
-  .copy p {
-    margin: 0;
-    font-size: 14px;
-  }
-  
-  .links ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .links li {
-    margin: 0 10px;
-  }
-  
-  .links a {
-    color: #fff;
-    font-size: 14px;
-    text-decoration: none;
-  }
-  
-  .links a:hover {
-    text-decoration: underline;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: #fff;
+  width: 100%;
+  height: 50px;
+}
 
-  
-  .instagram {
-    position: relative; /* Establece el botón como un contexto de posición */
-    left: 500px;
-    bottom: 34px
-  }
+.copy p {
+  margin: 0;
+  font-size: 14px;
+}
 
-  .facebook {
-    position: relative; /* Establece el botón como un contexto de posición */
-    left: 540px;
-    bottom: 34px
-  }
+.links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-  .x {
-    position: relative; /* Establece el botón como un contexto de posición */
-    left: 580px;
-    bottom: 34px
-  }
-  
-  
-  .logoRedes {
-    max-height: 30px;
-    position: absolute; /* Posiciona el elemento de manera absoluta dentro del botón */
-    top: 50%; /* Lo centra verticalmente dentro del botón */
-  }
-  
-  .nombre{
-    position: absolute; /* Establece el botón como un contexto de posición */
-    left: 50px;
-    bottom: -32px;
-    font-size: 24px;
-  }
+.links li {
+  margin: 0 10px;
+}
+
+.links a {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.instagram {
+  position: relative; /* Establece el botón como un contexto de posición */
+  left: 500px;
+  bottom: 34px;
+}
+
+.facebook {
+  position: relative; /* Establece el botón como un contexto de posición */
+  left: 540px;
+  bottom: 34px;
+}
+
+.x {
+  position: relative; /* Establece el botón como un contexto de posición */
+  left: 580px;
+  bottom: 34px;
+}
+
+.logoRedes {
+  max-height: 30px;
+  position: absolute; /* Posiciona el elemento de manera absoluta dentro del botón */
+  top: 50%; /* Lo centra verticalmente dentro del botón */
+}
+
+.nombre {
+  position: absolute; /* Establece el botón como un contexto de posición */
+  left: 50px;
+  bottom: -42px;
+  font-size: 24px;
+}

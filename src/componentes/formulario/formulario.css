@@ -1,39 +1,40 @@
-.formulario{
-    background-color: #ccc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 450px;
-  }
-  .contenedor{
-    width: 100%;
-    padding: 15px;
+.formulario {
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+}
+.contenedor {
+  width: 100%;
+  padding: 15px;
+  margin-top: -30px;
 }
 
-h1{
-    text-align: center;
-    color: #1a2537;
-    font-size: 40px;
-    margin-top: 40px;
+h1 {
+  text-align: center;
+  color: #1a2537;
+  font-size: 40px;
+  margin-top: 40px;
 }
 
 input[type="text"],
-input[type="password"]{
-    font-size: 20px;
-    width: 82%;
-    padding: 13px;
-    border: none;
+input[type="email"],
+input[type="password"] {
+  font-size: 20px;
+  width: 82%;
+  padding: 13px;
+  border: none;
 }
-.input-contenedor{
-    margin: 15px;
-    border: 1px solid #aaa;
+.input-contenedor {
+  margin: 15px;
+  border: 1px solid #aaa;
 }
-.icon{
-    min-width: 50px;
-    text-align: center;
-    color: #999;
+.icon {
+  min-width: 50px;
+  text-align: center;
+  color: #999;
 }
-
 
 .button-container {
   display: flex;
@@ -56,31 +57,33 @@ input[type="password"]{
   padding: 10px 20px;
 }
 
-
-  
-
-p{
-    margin-bottom: 65px;
-    text-align: center;
+p {
+  margin-bottom: 65px;
+  text-align: center;
 }
 
 .generos-favoritos {
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .input-group {
-    display: flex;
-    flex-wrap: wrap;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
 
-  }
-  
-  .form-check {
-    margin-right: 10px;
-  }
-  
-  .checkbox-label {
-    font-size: 20px;
-  }
-  
-  
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -55px;
+}
+
+.form-check {
+  margin-right: 10px;
+}
+
+.checkbox-label {
+  font-size: 20px;
+}
+
+.input-group-check {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -45px;
+  margin-left: -300px;
+}

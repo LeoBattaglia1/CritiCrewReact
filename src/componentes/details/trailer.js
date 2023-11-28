@@ -1,5 +1,5 @@
-import React from 'react';
-import YouTube from 'react-youtube';
+import React from "react";
+import YouTube from "react-youtube";
 
 const Trailers = ({ trailers }) => {
   return (
@@ -7,7 +7,14 @@ const Trailers = ({ trailers }) => {
       <h3>Trailers:</h3>
       {trailers.map((trailer) => (
         <div key={trailer.id} className="trailer">
-          <YouTube videoId={trailer.key} opts={{/* Opciones de YouTube */}} />
+          <YouTube
+            videoId={trailer.key}
+            opts={
+              {
+                /* Opciones de YouTube */
+              }
+            }
+          />
         </div>
       ))}
     </div>
@@ -15,4 +22,3 @@ const Trailers = ({ trailers }) => {
 };
 
 export default Trailers;
-

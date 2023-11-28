@@ -1,77 +1,76 @@
-.button{
-    display: flex;
-    justify-content:center;
-    margin-top: 10px;
-  
-  }
-  
- 
-  .vote {
-    background-color: orange;
-    color: white;
-    font-size: 18px;
-    padding: 10px 80px;
-    margin-top: 5px;
-  }
-  
-  .vote:hover {
-    background-color: #e65c00;
-  }
+.button {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
 
+.vote {
+  background-color: orange;
+  color: white;
+  font-size: 18px;
+  padding: 10px 80px;
+  margin-top: 5px;
+}
 
+.vote:hover {
+  background-color: #e65c00;
+}
 
-  .rating-container > h3 {
-    margin: 0;
-    padding: 5px;
-    text-align: center;
-    background-color: orange;
-  }
+.rating-container > h3 {
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+  background-color: orange;
+}
 
-  label {
-    margin: 0 5px;
-  }
-  
-  #ratingValue {
-    margin-left: 10px;
-  }
-  .rating-inputs {
-    display: flex;
-    align-items: center;
-  }
-  
-  .slider {
-    margin-top: 25px;
-    margin-bottom: 15px;
- 
-    width: 200px;
-    height: 10px;
-    border-radius: 5px;
-    background: #ccc;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-  }
-  
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #7e1616;
-    cursor: pointer;
-  }
-  
-  .slider::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #7e1616;
-    cursor: pointer;
-  }
-  
-  #ratingValue {
-    margin-left: 10px;
-  }
-  
+label {
+  margin: 0 5px;
+}
+
+#ratingValue {
+  margin-left: 10px;
+}
+.rating-inputs {
+  display: flex;
+  align-items: center;
+}
+
+.slider {
+  margin-top: 25px;
+  margin-bottom: 15px;
+
+  width: 200px;
+  height: 10px;
+  border-radius: 5px;
+  background: #ccc;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #7e1616;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #7e1616;
+  cursor: pointer;
+}
+
+#ratingValue {
+  margin-left: 10px;
+}
+
+.centered-text {
+  text-align: center;
+}
