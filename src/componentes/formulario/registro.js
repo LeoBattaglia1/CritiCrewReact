@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import bcrypt from "bcryptjs"; //encripta password
 import Modal from "../modal/modal";
 import "./formulario.css";
 
@@ -43,7 +44,7 @@ const Registro = ({ handleBackClick }) => {
         body: JSON.stringify({
           nombre: nombreCompleto,
           correo: correoElectronico,
-          contraseña: contrasena,
+          contraseña: await bcrypt.hash(contrasena, 10),
           genero: generosFavoritos,
         }),
       });
@@ -107,7 +108,7 @@ const Registro = ({ handleBackClick }) => {
           </div>
 
           <h2>Generos favoritos:</h2>
-          <div className="input-group input-group mb-3">
+          <div className="input-group-check input-group mb-3">
             <div className="form-check form-check-inline">
               <input
                 className="form-check-input"

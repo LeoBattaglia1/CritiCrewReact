@@ -6,22 +6,41 @@ const Comentarios = ({ idUsuario, movieId }) => {
   const [comentarios, setComentarios] = useState([]);
   const [nuevoComentario, setNuevoComentario] = useState("");
   const [mensajeModal, setMensajeModal] = useState(null);
-
-  const getComentarios = async () => {
-    try {
-      const response = await fetch(
-        `http://localhost:3010/comentario/${movieId}`,
-      );
-      const data = await response.json();
-      setComentarios(data);
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
+  const [username, setUsername] = useState("");
 
   useEffect(() => {
-    getComentarios();
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:3010/comentario/${movieId}`
+        );
+        const data = await response.json();
+        setComentarios(data);
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
+    fetchData();
   }, [movieId]);
+
+  useEffect(() => {
+    if (idUsuario) {
+      //busca el nombre del usuario por su id
+      fetch(`http://localhost:3010/usuario/${idUsuario}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.nombre) {
+            setUsername(data.nombre);
+          }
+        })
+        .catch((error) => console.error("Error:", error));
+    }
+  }, [idUsuario]);
 
   const handleClose = () => {
     setMensajeModal(null);
@@ -42,7 +61,7 @@ const Comentarios = ({ idUsuario, movieId }) => {
         },
         body: JSON.stringify({
           usuario_id: idUsuario,
-          comentario: nuevoComentario,
+          comentario: `${username}: ${nuevoComentario}`,
           id_pelicula: movieId,
         }),
       });
@@ -50,13 +69,21 @@ const Comentarios = ({ idUsuario, movieId }) => {
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.message);
-      } else {
-        getComentarios(); // Actualizar comentarios después de agregar uno nuevo
-        setNuevoComentario("");
       }
     } catch (error) {
       console.error("Error:", error);
       setMensajeModal(error.message);
+    }
+
+    if (nuevoComentario.trim() !== "") {
+      const nuevoComentarioObj = {
+        usuario_id: idUsuario,
+        comentario: `${username}: ${nuevoComentario}`,
+        id_pelicula: movieId,
+      };
+
+      setComentarios([...comentarios, nuevoComentarioObj]);
+      setNuevoComentario("");
     }
   };
 

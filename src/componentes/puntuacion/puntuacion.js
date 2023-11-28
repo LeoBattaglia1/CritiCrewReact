@@ -1,14 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "../modal/modal";
 import "./puntuacion.css";
 
 const Puntuacion = ({ idUsuario, movieId }) => {
   const [puntuacion, setPuntuacion] = useState(1);
   const [mensajeModal, setMensajeModal] = useState(null);
+  const [calificacion, setCalificacion] = useState(Number);
 
   const handleClose = () => {
     setMensajeModal(null);
   };
+
+  useEffect(() => {
+    fetch(`http://localhost:3010/puntuacion/${movieId}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setCalificacion(data);
+      });
+  }, [movieId]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -31,11 +45,23 @@ const Puntuacion = ({ idUsuario, movieId }) => {
         throw new Error(errorData.message);
       } else {
         setMensajeModal("Su puntuacion fue cargada exitosamente");
+
+        // Actualizar la calificación después de enviar la puntuación
+        const calificacionResponse = await fetch(
+          `http://localhost:3010/puntuacion/${movieId}`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        const calificacionData = await calificacionResponse.json();
+        setCalificacion(calificacionData);
       }
     } catch (error) {
       console.error("Error:", error);
       setMensajeModal(error.message);
-      console.log(error.message);
     }
   };
 
@@ -64,6 +90,15 @@ const Puntuacion = ({ idUsuario, movieId }) => {
           </div>
         </form>
       </div>
+      <h3 className="centered-text">
+        {" "}
+        {calificacion !== null
+          ? calificacion === 0
+            ? "Aun no ha sido calificada"
+            : "Calificacion promedio: " + calificacion
+          : ""}
+      </h3>
+
       {mensajeModal && (
         <Modal mensaje={mensajeModal} handleClose={handleClose} />
       )}

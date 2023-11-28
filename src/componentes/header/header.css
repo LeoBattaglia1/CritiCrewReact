@@ -25,8 +25,8 @@ header {
 }
 
 .input-group {
-  flex: 2;
-  display: flex;
+  position: absolute;
+  left: 595px;
   justify-content: center;
   /* Centra horizontalmente el contenido */
   align-items: center;
@@ -38,41 +38,42 @@ header {
   padding: 5px;
   height: 25px;
   width: 250px;
+  margin-top: 45px;
 }
 
-.btn.btn-outline-secondary.btn-lg {
-  margin-left: 5px;
-  font-size: 18px;
+.btn.btn-outline-secondary {
+  font-size: 22px;
   padding: 8px 15px;
-  background-color: #666666;
   color: #fff;
+  background-color: #ac5b42;
   border: none;
   border-radius: 4px;
+  cursor: pointer;
 }
 
-.btn.btn-outline-secondary.btn-lg:hover {
-  background-color: #444444;
+.btn.btn-outline-secondary:hover {
+  background-color: #b95d23;
 }
 
 .dropbtn {
-  flex: 3;
   font-size: 22px;
   padding: 8px 15px;
-}
-
-.dropbtn:hover {
+  color: #fff;
+  background-color: #ac5b42;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  color: #b95d23;
+  margin-right: 10px;
 }
 
 .login-content {
   display: none;
   position: absolute;
   z-index: 1;
-  background-color: #ac5b42;
   height: 50px;
   width: 150px;
   border-radius: 4px;
+  padding: 8px;
 }
 
 .login:hover .login-content {
@@ -84,10 +85,35 @@ header {
   height: 50px;
   width: 250px;
   color: #070707;
-  font-size: 20px;
+  font-size: 22px;
   border-radius: 4px;
 }
 
 .login-content button:hover {
-  background-color: #444444;
+  background-color: #ddd;
+}
+
+.suggestions {
+  position: absolute;
+  left: 595px;
+  top: 73px;
+  width: 19%;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-top: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.suggestion {
+  color: #070707;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  justify-content: center;
+}
+
+.suggestion:hover {
+  background-color: #ddd;
 }

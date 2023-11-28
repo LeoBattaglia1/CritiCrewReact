@@ -70,7 +70,7 @@ p {
 .input-group {
   display: flex;
   flex-wrap: wrap;
-  margin-top: -50px;
+  margin-top: -55px;
 }
 
 .form-check {
@@ -79,4 +79,11 @@ p {
 
 .checkbox-label {
   font-size: 20px;
+}
+
+.input-group-check {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -45px;
+  margin-left: -300px;
 }

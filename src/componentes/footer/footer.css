@@ -64,6 +64,6 @@ footer {
 .nombre {
   position: absolute; /* Establece el botón como un contexto de posición */
   left: 50px;
-  bottom: -32px;
+  bottom: -42px;
   font-size: 24px;
 }

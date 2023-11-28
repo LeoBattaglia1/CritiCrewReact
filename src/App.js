@@ -8,7 +8,7 @@ import InicioSesion from "./componentes/formulario/InicioSesion";
 import DetailsMovie from "./componentes/details/detailsMovie";
 
 const App = () => {
-  const [showCarousel, setShowCarousel] = useState(true);
+  const [showCarousel] = useState(true);
   const [showRegistro, setShowRegistro] = useState(false);
   const [showInicioSesion, setShowInicioSesion] = useState(false);
   const [showDetailsMovie, setShowDetailsMovie] = useState(false);
@@ -47,6 +47,7 @@ const App = () => {
   return (
     <div>
       <Header
+        id={userId}
         handleFormVisibilityRegistro={handleFormVisibilityRegistro}
         handleFormVisibilityInicioSesion={handleFormVisibilityInicioSesion}
         handleDetailsVisibility={handleDetailsVisibility}

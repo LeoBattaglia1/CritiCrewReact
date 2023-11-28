@@ -13,7 +13,7 @@ const Carousel = ({ idUsuario }) => {
   const [showMenu, setShowMenu] = useState(true);
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
-  const [genres, setGenres] = useState([
+  const [genres] = useState([
     { id: 0, name: "Todos" },
     { id: 28, name: "Acción" },
     { id: 16, name: "Animación" },
